@@ -31,5 +31,10 @@ def remove(instance: Queue) -> None:
         print("Arquivo statics/arquivo_teste.txt removido com sucesso")
 
 
-def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+def file_metadata(instance: Queue, position: int) -> None:
+    if (position > len(instance) - 1):
+        print("Posição inválida", file=sys.stderr)
+
+    else:
+        data = instance.search(position)
+        print(data)
