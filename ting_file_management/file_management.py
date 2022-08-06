@@ -2,7 +2,7 @@ import sys
 
 
 def txt_importer(path_file: str) -> list:
-    if "txt" not in path_file.lower():
+    if not path_file.strip().lower().endswith(".txt"):
         print("Formato inválido", file=sys.stderr)
         return None
 
