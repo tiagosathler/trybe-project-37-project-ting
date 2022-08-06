@@ -11,7 +11,7 @@ class Queue:
     def enqueue(self, value: dict) -> None:
         self._data.append(value)
 
-    def dequeue(self) -> int:
+    def dequeue(self) -> dict:
         return self._data.popleft()
 
     def search(self, index: int) -> dict:
