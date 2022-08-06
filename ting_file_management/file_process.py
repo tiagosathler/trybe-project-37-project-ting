@@ -26,10 +26,9 @@ def remove(instance: Queue) -> None:
         print("Não há elementos")
 
     else:
-        while not instance.is_empty():
-            data = instance.dequeue()
-            path_file = data["nome_do_arquivo"]
-        print(f"Arquivo {path_file} removido com sucesso")
+        first_file_processed = instance.dequeue()
+        first_path_file = first_file_processed["nome_do_arquivo"]
+        print(f"Arquivo {first_path_file} removido com sucesso")
 
 
 def file_metadata(instance: Queue, position: int) -> None:
