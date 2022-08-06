@@ -15,7 +15,7 @@ class Queue:
         return self._data.popleft()
 
     def search(self, index: int) -> dict:
-        if (index < 0 or index > len(self)):
-            raise IndexError("Index out of bounds")
-        else:
+        if (0 <= index < len(self)):
             return self._data[index]
+        else:
+            raise IndexError("Index out of bounds")
