@@ -1,4 +1,5 @@
 from collections import deque
+from copy import deepcopy
 
 
 class Queue:
@@ -22,3 +23,6 @@ class Queue:
             return self._data[index]
         else:
             raise IndexError("Index out of bounds")
+
+    def copy(self):
+        return deepcopy(self)
