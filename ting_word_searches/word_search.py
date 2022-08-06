@@ -3,6 +3,7 @@ from ting_file_management.queue import Queue
 
 def exists_word(word: str, instance: Queue):
     response = search_by_word(word, instance)
+
     if len(response):
         response = [{
             "palavra": element["palavra"],
@@ -11,14 +12,18 @@ def exists_word(word: str, instance: Queue):
                 "linha": occurrence["linha"]
             } for occurrence in element["ocorrencias"]]
         } for element in response]
+
     return response
 
 
 def search_by_word(word: str, instance: Queue) -> list:
     result = []
-    for index in range(len(instance)):
+    copied_instance = instance.copy()
+
+    while not copied_instance.is_empty():
         occurrences = []
-        meta_data = instance.search(index)
+        meta_data = copied_instance.dequeue()
+
         for line, line_content in enumerate(meta_data["linhas_do_arquivo"]):
             if (word.lower() in line_content.lower()):
                 occurrence = {
@@ -26,6 +31,7 @@ def search_by_word(word: str, instance: Queue) -> list:
                     "conteudo": line_content
                 }
                 occurrences.append(occurrence)
+
         if len(occurrences):
             data = {
                 "palavra": word,
