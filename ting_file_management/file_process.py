@@ -4,11 +4,10 @@ import sys
 
 
 def process(path_file: str, instance: Queue) -> None:
-    if (len(instance) > 0):
-        for index in range(len(instance)):
-            data = instance.search(index)
-            if data["nome_do_arquivo"] == path_file:
-                return None
+    for index in range(len(instance)):
+        data = instance.search(index)
+        if data["nome_do_arquivo"] == path_file:
+            return None
 
     file_content = txt_importer(path_file)
 
@@ -24,11 +23,13 @@ def process(path_file: str, instance: Queue) -> None:
 
 def remove(instance: Queue) -> None:
     if not len(instance):
-        print("Não há elementos", file=sys.stdout)
+        print("Não há elementos")
 
     else:
-        instance.dequeue()
-        print("Arquivo statics/arquivo_teste.txt removido com sucesso")
+        while (len(instance)):
+            data = instance.dequeue()
+            path_file = data["nome_do_arquivo"]
+        print(f"Arquivo {path_file} removido com sucesso")
 
 
 def file_metadata(instance: Queue, position: int) -> None:
