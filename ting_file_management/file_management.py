@@ -12,7 +12,7 @@ def txt_importer(path_file: str) -> list:
 
     except FileNotFoundError:
         print(
-            "Arquivo statics/arquivo_nao_existe.txt não encontrado",
+            f"Arquivo {path_file} não encontrado",
             file=sys.stderr)
 
     else:
