@@ -8,6 +8,9 @@ class Queue:
     def __len__(self) -> int:
         return len(self._data)
 
+    def is_empty(self) -> bool:
+        return not bool(self._data)
+
     def enqueue(self, value: dict) -> None:
         self._data.append(value)
 
