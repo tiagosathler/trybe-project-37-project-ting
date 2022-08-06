@@ -22,11 +22,11 @@ def process(path_file: str, instance: Queue) -> None:
 
 
 def remove(instance: Queue) -> None:
-    if not len(instance):
+    if instance.is_empty():
         print("Não há elementos")
 
     else:
-        while (len(instance)):
+        while not instance.is_empty():
             data = instance.dequeue()
             path_file = data["nome_do_arquivo"]
         print(f"Arquivo {path_file} removido com sucesso")
