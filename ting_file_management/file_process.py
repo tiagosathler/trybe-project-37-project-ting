@@ -4,6 +4,32 @@ import sys
 
 
 def process(path_file: str, instance: Queue) -> None:
+    """
+    Processa o conteúdo de um arquivo de texto, gerando
+    metadados em um dicionário e o enfileira na Fila
+
+    Metadados: dict
+        {
+            "nome_do_arquivo": path_file,
+
+            "qtd_linhas": <quantidade de linhas do texto: int>,
+
+            "linhas_do_arquivo": <linhas do texto: list[str]>
+        }
+
+    Entradas:
+    ---------
+    path_file: str
+        Caminho e nome do arquivo de texto (txt).
+
+    instance: Queue
+        Instância da classe Queue (Fila).
+
+    Saída:
+    ------
+    sys.stdout: str
+        Print do dicionário com os metadados na saída padrão do sistema.
+    """
     for index in range(len(instance)):
         data = instance.search(index)
         if data["nome_do_arquivo"] == path_file:
@@ -22,6 +48,19 @@ def process(path_file: str, instance: Queue) -> None:
 
 
 def remove(instance: Queue) -> None:
+    """
+    Remove o primeiro dicionário da Fila, desenfileirando-a.
+
+    Entrada:
+    --------
+    instance: Queue
+        Instância da classe Queue (Fila).
+
+    Saída:
+    ------
+    sys.stdout: str
+        Print do caminho e nome do arquivo removido da Fila
+    """
     if instance.is_empty():
         print("Não há elementos")
 
@@ -32,7 +71,24 @@ def remove(instance: Queue) -> None:
 
 
 def file_metadata(instance: Queue, position: int) -> None:
-    if (position > len(instance) - 1):
+    """
+    Faz o print do dicionário na posição 'position' da Fila,
+    caso exista.
+
+    Entradas:
+    ---------
+    instance: Queue
+        Instância da classe Queue (Fila).
+
+    position: int
+        Posição do dicionário.
+
+    Saída:
+    ------
+    sys.stdout: str
+        Print do dicionário encontrado na Fila
+    """
+    if position > len(instance) - 1:
         print("Posição inválida", file=sys.stderr)
 
     else:
