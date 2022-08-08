@@ -6,12 +6,12 @@ def exists_word(word: str, instance: Queue) -> list:
     Pesquisa uma string dada por 'word' nos dicionários da Fila,
     retornando uma lista com os relatórios da busca.
     Cada elemento desta lista é um dicionário contendo
-    as informações da busca:
+    as informações da busca.
 
     Entradas:
     ---------
     word: str
-        Palavra a ser pesquisada (caso incentivo)
+        Palavra a ser pesquisada (caso insensitivo)
 
     instance: Queue
         Instância da classe Queue (Fila).
@@ -48,12 +48,12 @@ def search_by_word(word: str, instance: Queue) -> list:
     Pesquisa uma string dada por 'word' nos dicionários da Fila,
     retornando uma lista com os relatórios da busca.
     Cada elemento desta lista é um dicionário contendo
-    as informações da busca:
+    as informações da busca.
 
     Entradas:
     ---------
     word: str
-        Palavra a ser pesquisada (caso incentivo)
+        Palavra a ser pesquisada (caso insensitivo)
 
     instance: Queue
         Instância da classe Queue (Fila).
