@@ -9,7 +9,9 @@ def add_file(queue: Queue) -> None:
 
 
 def remove_file(queue: Queue) -> None:
-    remove(queue)
+    response = input("TEM CERTEZA? (s/n): ")
+    if response.lower() == "s":
+        remove(queue)
 
 
 def get_file_content(queue: Queue) -> None:
