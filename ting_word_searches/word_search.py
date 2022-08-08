@@ -25,22 +25,22 @@ def exists_word(word: str, instance: Queue) -> list:
         e a lista 'ocorrencias' contendo o(s) número(s) da 'linha' encontrada
         no texto.
     """
-    response = search_by_word(word, instance)
+    reports = search_by_word(word, instance)
 
-    if len(response):
-        response = [
+    if len(reports):
+        reports = [
             {
-                "palavra": element["palavra"],
-                "arquivo": element["arquivo"],
+                "palavra": report["palavra"],
+                "arquivo": report["arquivo"],
                 "ocorrencias": [
                     {"linha": occurrence["linha"]}
-                    for occurrence in element["ocorrencias"]
+                    for occurrence in report["ocorrencias"]
                 ],
             }
-            for element in response
+            for report in reports
         ]
 
-    return response
+    return reports
 
 
 def search_by_word(word: str, instance: Queue) -> list:
@@ -67,7 +67,7 @@ def search_by_word(word: str, instance: Queue) -> list:
         e a lista 'ocorrencias' contendo o(s) 'conteudo' da(s) linha(s) e
         o(s) número(s) da 'linha' no texto.
     """
-    result = []
+    reports = []
     copied_instance = instance.copy()
 
     while not copied_instance.is_empty():
@@ -80,11 +80,11 @@ def search_by_word(word: str, instance: Queue) -> list:
                 occurrences.append(occurrence)
 
         if len(occurrences):
-            data = {
+            report = {
                 "palavra": word,
                 "arquivo": meta_data["nome_do_arquivo"],
                 "ocorrencias": occurrences,
             }
-            result.append(data)
+            reports.append(report)
 
-    return result
+    return reports
