@@ -37,14 +37,15 @@ def process(path_file: str, instance: Queue) -> None:
 
     file_content = txt_importer(path_file)
 
-    data = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": len(file_content),
-        "linhas_do_arquivo": file_content,
-    }
+    if file_content:
+        data = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(file_content),
+            "linhas_do_arquivo": file_content,
+        }
 
-    instance.enqueue(data)
-    print(data)
+        instance.enqueue(data)
+        print(data)
 
 
 def remove(instance: Queue) -> None:
