@@ -39,7 +39,13 @@ def run_search_by_word(queue: Queue) -> None:
 
 
 def clear_all(queue: Queue) -> None:
-    pass
+    if not queue.is_empty():
+        response = input("TEM CERTEZA? (s/n): ")
+        if response.lower() == "s":
+            queue.clear_all()
+            print("A Fila está vazia!!!")
+    else:
+        print("A Fila já estava vazia!!!")
 
 
 if __name__ == "__main__":
