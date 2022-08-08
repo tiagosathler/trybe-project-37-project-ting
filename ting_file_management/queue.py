@@ -60,3 +60,9 @@ class Queue:
         Retorna a cópia desta instância de Queue.
         """
         return deepcopy(self)
+
+    def clear_all(self) -> None:
+        """
+        Método que limpa totalmente a Fila
+        """
+        self._data.clear()
