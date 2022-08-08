@@ -88,9 +88,11 @@ def file_metadata(instance: Queue, position: int) -> None:
     sys.stdout: str
         Print do dicionário encontrado na Fila
     """
-    if position > len(instance) - 1:
+    try:
+        data = instance.search(position)
+
+    except IndexError:
         print("Posição inválida", file=sys.stderr)
 
     else:
-        data = instance.search(position)
         print(data)
