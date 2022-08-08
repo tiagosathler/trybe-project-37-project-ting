@@ -17,7 +17,7 @@ def get_file_content(queue: Queue) -> None:
         index = ""
         while not index.isdecimal():
             index = input("Digite a posição da Fila (inteiro positivo): ")
-            file_metadata(queue, int(index, 10))
+        file_metadata(queue, int(index, 10))
     else:
         print("A fila está vazia!")
 
