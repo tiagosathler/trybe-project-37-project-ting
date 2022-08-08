@@ -26,7 +26,7 @@ def run_exists_word(queue: Queue) -> None:
     word = input("Digite a palavra a ser pesquisada na Fila: ")
     reports = exists_word(word, queue)
     if not reports:
-        print(f"Palavra {word} não encontrda na Fila!")
+        print(f"Palavra {word} não encontrada na Fila!")
     print(reports)
 
 
@@ -34,7 +34,7 @@ def run_search_by_word(queue: Queue) -> None:
     word = input("Digite a palavra a ser pesquisada na Fila: ")
     reports = search_by_word(word, queue)
     if not reports:
-        print(f"Palavra {word} não encontrda na Fila!")
+        print(f"Palavra {word} não encontrada na Fila!")
     print(reports)
 
 
