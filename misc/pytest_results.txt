@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.4, pytest-7.1.1, pluggy-1.0.0 -- /home/tiago/trybe-exercises/projetos/37-sd-015-b-project-ting/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/tiago/trybe-exercises/projetos/37-sd-015-b-project-ting, configfile: pyproject.toml, testpaths: tests
+plugins: cov-2.10.1, json-0.4.0
+collecting ... collected 17 items
+
+tests/test_file_mangement.py::test_validar_importar_noticias_com_sucesso PASSED
+tests/test_file_mangement.py::test_validar_importar_com_extencao_invalida PASSED
+tests/test_file_mangement.py::test_validar_importar_com_arquivo_nao_existente PASSED
+tests/test_file_process.py::test_validar_funcao_process_com_sucesso PASSED
+tests/test_file_process.py::test_validar_funcao_process_ignorando_mesmo_nome {'nome_do_arquivo': 'statics/arquivo_teste.txt', 'qtd_linhas': 3, 'linhas_do_arquivo': ['Acima de tudo,', 'é fundamental ressaltar que a adoção de políticas descentralizadoras nos obriga', 'à análise do levantamento das variáveis envolvidas.']}
+PASSED
+tests/test_file_process.py::test_remover_arquivo_com_sucesso PASSED
+tests/test_file_process.py::test_remover_arquivo_inexistente PASSED
+tests/test_file_process.py::test_validar_funcao_file_metadata_com_sucesso PASSED
+tests/test_file_process.py::test_validar_funcao_file_metadata_com_posicao_invalida PASSED
+tests/test_queue.py::test_enqueue_deve_adicionar_um_valor_a_fila PASSED
+tests/test_queue.py::test_dequeue_deve_remover_um_valor_a_fila PASSED
+tests/test_queue.py::test_search_deve_buscar_um_valor_a_partir_de_um_indice PASSED
+tests/test_queue.py::test_search_com_indice_invalido PASSED
+tests/test_word_search.py::test_validar_funcao_exists_word_com_sucesso PASSED
+tests/test_word_search.py::test_validar_funcao_exists_word_sem_palavra_existente PASSED
+tests/test_word_search.py::test_validar_search_by_word_com_sucesso PASSED
+tests/test_word_search.py::test_validar_search_by_word_com_palavra_inexistente PASSED
+
+============================== 17 passed in 0.03s ==============================
